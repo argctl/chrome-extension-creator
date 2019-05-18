@@ -16,6 +16,10 @@
   ],
   "author": "David Kamer",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UniWrighte/create-chrome-extension.git"
+  },
   "bin": {
     "create-chrome-extension": "./index.js",
     "cce": "./index.js"
