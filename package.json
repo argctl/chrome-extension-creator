@@ -1,0 +1,23 @@
+{
+  "name": "create-chrome-extension",
+  "version": "1.0.0",
+  "description": "Quickly bootstrap a chrome extension",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chrome",
+    "extension",
+    "chrome",
+    "extension",
+    "create-react-app",
+    "cli"
+  ],
+  "author": "David Kamer",
+  "license": "MIT",
+  "bin": {
+    "create-chrome-extension": "./index.js",
+    "cce": "./index.js"
+  }
+}
