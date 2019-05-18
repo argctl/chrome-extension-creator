@@ -1,6 +1,6 @@
 {
   "name": "chrome-extension-creator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Quickly bootstrap a chrome extension",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,7 @@
   "bin": {
     "create-chrome-extension": "./index.js",
     "chrome-extension-creator": "./index.js",
-    "cce": "./index.js"
+    "cce": "./index.js",
+    "cec": "./index.js"
   }
 }
