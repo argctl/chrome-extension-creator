@@ -1,5 +1,5 @@
 {
-  "name": "Habit Stopper",
+  "name": "extension-starter",
   "version": "1.0",
   "description": "Help you to understand your habits",
   "permissions": ["activeTab", "declarativeContent", "storage"],
