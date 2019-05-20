@@ -1,6 +1,6 @@
 {
   "name": "chrome-extension-creator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Quickly bootstrap a chrome extension",
   "main": "index.js",
   "scripts": {
