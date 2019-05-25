@@ -2,12 +2,12 @@
 const fs = require('fs')
 const os = require('os')
 const path = require('path')
-const { parse } = require('./lib/cli')
+const { parse } = require('./util/cli')
 const { args, flags } = parse(process.argv.slice(2))
 const packageJSON = require('./static/package.json')
 const manifestJSON = require('./static/manifest.json')
 const version = Number(process.version.match(/^v(\d+\.\d+)/)[1])
-const { makeBasicWebpack } = require('./lib/buildwp')
+const { makeBasicWebpack } = require('./util/buildwp')
 
 function write (s) {
   return process.stdout.write(s)

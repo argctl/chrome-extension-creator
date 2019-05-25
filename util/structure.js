@@ -6,11 +6,11 @@ const getStaticFileNames = (staticPath) => {
 }
 
 const getStaticDir = () => {
-  return path.join(__dirname.split('lib')[0], 'static')
+  return path.join(__dirname.split('util')[0], 'static')
 }
 
 const getWebpackStaticDir = () => {
-  return path.join(__dirname.split('lib')[0], 'static_webpack')
+  return path.join(__dirname.split('util')[0], 'static_webpack')
 }
 
 const getTargetDir = (projectName) => {

@@ -12,7 +12,7 @@ const fileToDirIndex = (originPath, name, destinationPathName) => {
 }
 
 const webpackStaticFiles = (projectName) => {
-  const staticPath = path.join(__dirname.split('lib')[0], 'static_webpack')
+  const staticPath = path.join(__dirname.split('util')[0], 'static_webpack')
   const destinationPath = path.join(process.cwd(), projectName)
   const ignoreFiles = ['add-package.json']
   const files = getStaticFileNames(staticPath)
@@ -22,9 +22,9 @@ const webpackStaticFiles = (projectName) => {
 }
 
 const webpackPackageJSON = (projectName) => {
-  const normalPackage = require(path.join(__dirname.split('lib')[0], 'static', 'package.json'))
-  const addPackage = require(path.join(__dirname.split('lib')[0], 'static_webpack', 'add-package.json'))
-  const manifest = require(path.join(__dirname.split('lib')[0], 'static', 'manifest.json'))
+  const normalPackage = require(path.join(__dirname.split('util')[0], 'static', 'package.json'))
+  const addPackage = require(path.join(__dirname.split('util')[0], 'static_webpack', 'add-package.json'))
+  const manifest = require(path.join(__dirname.split('util')[0], 'static', 'manifest.json'))
   const newManifest = { ...manifest, name: projectName }
   const newPackage = { ...normalPackage, ...addPackage, name: projectName, author: os.userInfo().username }
   fs.writeFileSync(path.join(process.cwd(), projectName, 'package.json'), JSON.stringify(newPackage, null, 2))
@@ -32,7 +32,7 @@ const webpackPackageJSON = (projectName) => {
 }
 
 const makeWPFiles = (projectName) => {
-  const staticPath = path.join(__dirname.split('lib')[0], 'static')
+  const staticPath = path.join(__dirname.split('util')[0], 'static')
   const destinationPath = path.join(process.cwd(), projectName, 'src')
   const files = getStaticFileNames(staticPath)
   files.forEach(file => {
