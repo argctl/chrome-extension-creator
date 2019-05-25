@@ -4,7 +4,7 @@
   "description": "Quickly bootstrap a chrome extension",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [
     "chrome",
@@ -16,6 +16,13 @@
   ],
   "author": "David Kamer",
   "license": "MIT",
+  "standard": {
+    "globals": [
+      "chrome",
+      "expect",
+      "test"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/UniWrighte/create-chrome-extension.git"
@@ -25,5 +32,8 @@
     "chrome-extension-creator": "./index.js",
     "cce": "./index.js",
     "cec": "./index.js"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
   }
 }
