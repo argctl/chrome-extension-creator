@@ -2,10 +2,12 @@
 const fs = require('fs')
 const os = require('os')
 const path = require('path')
-const args = process.argv.slice(2)
+const { parse } = require('./lib/cli')
+const { args, flags } = parse(process.argv.slice(2))
 const packageJSON = require('./static/package.json')
 const manifestJSON = require('./static/manifest.json')
 const version = Number(process.version.match(/^v(\d+\.\d+)/)[1])
+const { makeBasicWebpack } = require('./lib/buildwp')
 
 function write (s) {
   return process.stdout.write(s)
@@ -32,7 +34,7 @@ function copyContents (originPath, destinationPath, files) {
   })
 }
 
-function main () {
+function basic () {
   if (args.lengh === 0) return write('an error occured, please provide a name')
   const name = args[0]
   const author = os.userInfo().username
@@ -52,4 +54,21 @@ function main () {
     have fun!
   `)
 }
-main()
+// main()
+
+function webpackBuild () {
+  const name = args[0]
+  makeBasicWebpack(name)
+  write(`DONE!
+    run:
+    cd ${name}
+    npm i
+    npm run build
+
+    The basic chrome extension will compile to the 'build' directory by default.
+    Source files are in the 'src' directory
+  
+    have fun!
+  `)
+}
+flags.indexOf('--webpack') !== -1 ? webpackBuild() : basic()
